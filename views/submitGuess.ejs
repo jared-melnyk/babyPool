@@ -1,0 +1,63 @@
+<%- include("partials/header") %>
+
+<div id="submission" class="container text-center">
+  <h3>Can you predict the baby future?</h3>
+  <div class="container d-flex text-right justify-content-center">
+    <form class="w-70" action="/guesses" method="POST" id="scoreForm">
+      <div class="form-group row justify-content-center">
+        <label for="<guesserName>" class="col-form-label">Your Name</label>
+        <div class="col">
+          <input type="text" class="form-control" value="" id="guesserName" name="guesserName" placeholder="Your Name">
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <label for="<guesserEmail>" class="col-form-label">Your Email</label>
+        <div class="col">
+          <input type="email" class="form-control" value="" id="guesserName" name="guesserEmail" placeholder="e.g. baby.melnyk@gmail.com">
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <label for="birthDate" class="col-form-label">Birth Date</label>
+        <div class="col">
+          <input type="datetime-local" class="form-control" value=2020-10-15T12:00:00 id="birthDate" name="birthDate">
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <label for="<babyLength>" class="col-form-label">Baby Length (cm)</label>
+        <div class="col">
+          <input type="number" step="0.1" class="form-control" id="babyLength" name="babyLength" placeholder="e.g. 20.8">
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <label for="babyWeightPounds" class="col-form-label">Baby Weight</label>
+        <div class="col">
+          <input type="number" class="form-control" id="babyWeightPounds" name="babyWeightPounds" placeholder="pounds">
+        </div>
+        <div class="col">
+          <input type="number" class="form-control" id="babyWeightOunces" name="babyWeightOunces" placeholder="ounces">
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <label for="<guesserName>" class="col-form-label">Baby Sex</label>
+        <div class="col">
+          <select class="form-control" value="" id="babySex" name="babySex">
+            <option>Female</option>
+            <option>Male</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <div class="col text-center">
+          <button type="submit" class="my-2 btn btn-lg btn-success">Submit Prediction</button>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <div class="col text-center">
+          <h5 class="text-warning my-4">Note: if you submit multple predictions with the same email address, only the latest prediction will be saved.</h5>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%- include("partials/footer") %>

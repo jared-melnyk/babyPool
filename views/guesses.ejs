@@ -1,0 +1,91 @@
+<%- include("partials/header") %>
+
+<div id="basket" class="container align-items-center d-flex">
+  <div class="row my-0 w-100 align-items-center">
+    <div class="col w-100 text-center">
+      <h1 id="qmark">?</h1>
+    </div>
+  </div>
+</div>
+<div id="pool-rules" class="container p-3">
+  <div class="row my-2 mx-4">
+    <div class="col text-center">
+      <h1>Pool Rules</h1>
+      <p id="overview">We set up this pool as a fun, socially distant way to engage with friends & family as
+        we anticipate the arrival of our little bundle of <s>poop</s> joy. We're also accepting donations via the pool
+        to our "diaper fund" in lieu of a registry, as we've thankfully acquired nearly everything else we need 
+        via generous hand-me-downs from you all and our local community. There's no pressure to participate or donate. 
+        Feel free to follow along just for fun!
+      </p>
+    </div>
+  </div>  
+  <div class="row my-2 mx-4 justify-content-center">
+    <div class="col-md-5">
+      <hr>
+    </div>
+    <div class="col-md-1 text-center">
+      <i class="fas fa-3x fa-swimmer"></i>
+    </div>
+    <div class="col-md-5">
+      <hr>
+    </div>
+  </div>
+    <div class="row my-2 mx-4 justify-content-center">
+      <div class="col-md-5">
+        <h3>HOW TO PLAY</h3>
+        <ol>
+          <li>Try to predict Baby Melnyk's birthday stat line: date, length, weight, & sex.</li>
+          <li>Click the button below to submit your prediction and participate in the pool.</li>
+          <li>Send a donation of $5 (or more if you like) via Venmo (@jared-melnyk), or give cash to J&M.</li>
+          <li>Share this website with any friends & family who may want to play.</li>
+          <li>Follow along on the Prediction Board below until the big day!</li>
+        </ol>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-5">
+        <h3>HOW TO WIN</h3>
+        <ol>
+          <li>There will be a winner for each of 3 categories: date, length, & weight.</li>
+          <li>In the event of a tie, sex and date will be used as tiebreakers, in that order.</li>
+          <li>$5 of each donation will go into the prize pool, to be split evenly between each winner.</li>
+          <li>Any donations beyond $5 per player will be split 50/50 between Baby Melnyk's diaper fund and <a href="https://www.chicagosfoodbank.org/" target="_blank" class="text-secondary">Greater Chicago Food Depository</a></li>
+        </ol>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col text-center">
+        <a class="btn btn-lg btn-outline-light" href="/submitGuess" role="button">Submit Your Prediction</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="guessTable" class="container text-center">
+  <h1>Prediction Board</h1>
+  <table class="table my-4">
+    <thead class="thead-light text-left">
+      <tr>
+        <th scope="col">Player Name</th>
+        <th scope="col">Birth Date</th>
+        <th scope="col">Length</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Sex</th>
+      </tr>
+    </thead>
+    <% allGuesses.forEach(function(guess) { %>
+      <% let d = new Date(guess.birthDate); %>
+      <% let displayDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); %>
+      <% let displayTime = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }); %>
+      <tbody class="text-left">
+        <tr>
+          <th scope="row"><%- guess.guesserName %></th>
+          <td><%- displayTime %> on <%- displayDate %></td>
+          <td><%- guess.babyLength %> cm</td>
+          <td><%- guess.babyWeight.pounds %> lbs <%- guess.babyWeight.ounces %> oz</td>
+          <td><%- guess.babySex %></td>
+        </tr>
+      </tbody>
+    <% }); %>
+  </table>
+</div>
+
+<%- include("partials/footer") %>

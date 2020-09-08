@@ -1,35 +1,62 @@
 body {
-    background-color: rgb(219, 212, 245);
+    background-color: #fff;
+    scroll-behavior: smooth;
 }
 
-.jumbotron {
-    background-color: rgb(149, 224, 224);
+hr {
+  border: 2px solid #fff;
+  border-radius: 7px;
 }
 
-.row {
-    margin: 25px auto;
+li {
+  font-size: 1.1em;
 }
 
-#teamForm {
-    width: 60%;
+h1 {
+  font-size: 4em;
 }
 
-#roster-col {
-    border: 2px solid cyan;
+h3 {
+  margin-bottom: 1.75rem;
+  margin-top: 5px;
 }
 
-#baker {
-    padding: 10px;
+#scoreForm {
+  max-width: 500px;
 }
 
-#bio {
-    margin-bottom: 30px;
+#welcome {
+  font-size: 1.25em;
 }
 
-.scoreboard {
-    border: 1px solid black;
-    text-align: center;
-    padding: 10px;
+#basket {
+  background-image: url("../img/baby_basket.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  padding-top: 98px;
+  min-height: 65vh;
+}
+
+#submission {
+  padding-top: 148px;
+}
+
+#pool-rules {
+  justify-content: flex-start;
+  background-color: #1abc9c;
+  max-width: 100%;
+  color: #fff;
+}
+
+#overview {
+  font-size: 1.25em;
+}
+
+#guessTable {
+  margin: 50px auto;
+  background-color: #fff;
 }
 
 #submit {
@@ -37,10 +64,37 @@ body {
   text-align: center;
 }
 
-.total {
-  font-weight: 700;
-}
-
 #spreadsheet {
   margin: 25px auto;
+}
+
+#mainNav {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 600;
+  transition: padding-top 0.3s, padding-bottom 0.3s;
+  background-color:  rgb(44, 62, 80);
+}
+
+.btn-outline-light:hover {
+  color: #1abc9c;
+}
+
+.navbar-brand {
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+}
+
+#qmark {
+  font-size: 30em;
+  color: rgba(44, 62, 80, 0.7);
+  text-align: center;
+}
+
+nav {
+  overflow: auto;
+}
+
+.navbar {
+  background: none;
 }
