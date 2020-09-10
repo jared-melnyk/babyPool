@@ -27,6 +27,7 @@ let GuessSchema = new mongoose.Schema({
     guesserName: String,
     guesserEmail: String,
     birthDate: Date,
+    birthTime: Date,
     babyLength: Number,
     babyWeight: {
       pounds: Number,
@@ -57,21 +58,13 @@ app.get("/guesses", function(req, res) {
 });
 
 app.post("/guesses", function(req, res) {
-  Guess.countDocuments({guesserEmail: req.body.guesserEmail}, function(err, result) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(result);
-    }
-  });
-  
-  let d = new Date(req.body.birthDate);
-  let displayDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes();
-  console.log(displayDate);
+  let birthTime = new Date(req.body.birthDate + " " + req.body.birthTime);
+  let birthDate = new Date(req.body.birthDate + " " + req.body.birthTime);
   let newGuess = {
     guesserName: req.body.guesserName,
     guesserEmail: req.body.guesserEmail,
-    birthDate: displayDate,
+    birthDate: birthDate,
+    birthTime: birthTime,
     babyLength: req.body.babyLength,
     babyWeight: {
       pounds: req.body.babyWeightPounds,
@@ -79,7 +72,6 @@ app.post("/guesses", function(req, res) {
     },
     babySex: req.body.babySex
   }
-  console.log(newGuess);
   Guess.findOneAndUpdate(
     {guesserEmail: req.body.guesserEmail}, 
     {$set: newGuess}, 
