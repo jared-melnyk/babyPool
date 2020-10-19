@@ -87,8 +87,10 @@ h3 {
 
 #qmark {
   font-size: 12vw;
-  color: rgb(250, 58, 186);
+  color: rgb(44, 62, 80);
   text-align: center;
+  background-color: #ffffff;
+  opacity: .6;
 }
 
 nav {
