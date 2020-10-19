@@ -1,9 +1,9 @@
 <%- include("partials/header") %>
 
 <div id="basket" class="container justify-content-center d-flex">
-  <div class="row my-0 justify-content-center">
-    <div class="col text-center">
-      <h1 id="qmark">?</h1>
+  <div class="row my-0 align-items-center justify-content-center">
+    <div class="col">
+      <a href="/results" id="qmark">RESULTS ARE IN</a>
     </div>
   </div>
 </div>
@@ -59,12 +59,13 @@
     </div>
     <div class="row mx-2 my-4">
       <div class="col text-center">
-        <a class="btn btn-lg btn-outline-light" href="/submitGuess" role="button">Submit Your Prediction</a>
+        <a class="btn btn-lg btn-outline-light" href="/results" role="button">View Results</a>
       </div>
     </div>
   </div>
 </div>
-<div id="guessTable" class="container justify-content-center text-center">
+
+<div id="guessTable" class="outputTable container justify-content-center text-center">
   <h1>Prediction Board</h1>
   <table class="table table-responsive-md my-4">
     <thead class="thead-light text-left">
@@ -79,7 +80,6 @@
     <% allGuesses.forEach(function(guess) { %>
       <% let d = new Date(guess.birthDate); %>
       <% let t = new Date(guess.birthTime); %>
-      <% console.log(guess.birthTime); %>
       <% let displayDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); %>
       <% let displayTime = t.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }); %>
       <tbody class="text-left">

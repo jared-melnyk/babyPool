@@ -33,7 +33,13 @@ let GuessSchema = new mongoose.Schema({
       pounds: Number,
       ounces: Number
     },
-    babySex: String
+    babySex: String,
+    birthdateRank: Number,
+    lengthRank: Number,
+    weightRank: Number,
+    sexRank: Number,
+    rankPoints: Number,
+    totalRank: Number
 }, {minimize:false});
 
 let Guess = mongoose.model("Guess", GuessSchema);
@@ -52,7 +58,30 @@ app.get("/guesses", function(req, res) {
     if(err){
         console.log(err);
     } else {
-        res.render("guesses", {allGuesses: allGuesses});
+      Guess.find({}).sort({totalRank: 1}).exec(function(err, allRanks) {
+        if(err){
+            console.log(err);
+        } else {
+            res.render("guesses", {allGuesses: allGuesses, allRanks: allRanks});
+        }
+      });  
+    }
+  });
+});
+
+app.get("/results", function(req, res) {
+  // Get all guesses from DB
+  Guess.find({}).sort({birthDate: 1}).exec(function(err, allGuesses) {
+    if(err){
+        console.log(err);
+    } else {
+      Guess.find({}).sort({totalRank: 1}).exec(function(err, allRanks) {
+        if(err){
+            console.log(err);
+        } else {
+            res.render("results", {allGuesses: allGuesses, allRanks: allRanks});
+        }
+      });  
     }
   });
 });

@@ -54,7 +54,7 @@ h3 {
   font-size: 1.25em;
 }
 
-#guessTable {
+.outputTable {
   margin: 50px auto;
   background-color: #fff;
 }
@@ -86,8 +86,8 @@ h3 {
 }
 
 #qmark {
-  font-size: 30em;
-  color: rgba(44, 62, 80, 0.7);
+  font-size: 12vw;
+  color: rgb(250, 58, 186);
   text-align: center;
 }
 
@@ -97,4 +97,34 @@ nav {
 
 .navbar {
   background: none;
+}
+
+.harleyPhoto {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+#hphoto {
+  margin-top: 98px;
+}
+
+#stats {
+  background-color: #1abc9c;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+#bigH {
+  background-image: url("../img/harley0.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  padding-top: 98px;
+  min-height: 65vh;
+  margin-bottom: 3rem;
 }

@@ -1,0 +1,98 @@
+<%- include("partials/header") %>
+
+<div id="bigH" class="container justify-content-center align-items-center d-flex">
+  <div class="row w-100 my-0 py-3 justify-content-center align-items-center">
+    <div class="col-1 col-md-2"></div>
+    <div id="stats" class="col-10 col-md-4 text-center">
+      <h3>Welcome Baby Harley!</h3>
+      <table class="table table-responsive-md my-4">
+        <tbody class="text-right">
+          <tr>
+            <th scope="row">Name</th>
+            <td>Harland Fetter Melnyk</td>
+          </tr>
+          <tr>
+            <th scope="row">Birthdate</th>
+            <td>8:08am Oct 14, 2020</td>
+          </tr>
+          <tr>
+            <th scope="row">Length</th>
+            <td>20.0 inches</td>
+          </tr>
+          <tr>
+            <th scope="row">Weight</th>
+            <td>7 lbs 9 oz</td>
+          </tr>
+          <tr>
+            <th scope="row">Sex</th>
+            <td>Male</td>
+          </tr>
+        </tbody>
+      </table>  
+    </div>
+    <div class="col-1 col-md-6"></div>
+  </div>
+</div>
+
+<div class="container justify-content-center text-center">
+  <h1>Harley's First Moments</h1>
+  <div class="row my-4">
+    <div class="col-6 col-lg-3">
+      <img class="img-fluid harleyPhoto" src="../img/harley4.jpg">
+    </div>
+    <div class="col-6 col-lg-3">
+      <img class="img-fluid harleyPhoto" src="../img/harley1.jpg">
+    </div>
+    <div class="col-6 col-lg-3">
+      <img class="img-fluid harleyPhoto" src="../img/harley2.jpg">
+    </div>
+    <div class="col-6 col-lg-3">
+      <img class="img-fluid harleyPhoto" src="../img/harley8.jpg">
+    </div>
+    <div class="col-6 col-lg-3">
+      <img class="img-fluid harleyPhoto" src="../img/harley3.jpg">
+    </div>
+    <div class="col-6 col-lg-3">
+      <img class="img-fluid harleyPhoto" src="../img/harley9.jpg">
+    </div>
+    <div class="col-6 col-lg-3">
+      <img class="img-fluid harleyPhoto" src="../img/harley5.jpg">
+    </div>
+    <div class="col-6 col-lg-3">
+      <img class="img-fluid harleyPhoto" src="../img/harley10.jpg">
+    </div>
+  </div>
+</div>
+
+<div class="outputTable container justify-content-center text-center">
+  <h1>Final Results</h1>
+  <table class="table table-responsive-md my-4">
+    <thead class="thead-light text-right">
+      <tr>
+        <th scope="col">Player Name</th>
+        <th scope="col"><b>Final Rank</b></th>
+        <th scope="col">Rank Points</th>
+        <th scope="col">Date Rank</th>
+        <th scope="col">Length Rank</th>
+        <th scope="col">Weight Rank</th>
+        <th scope="col">Sex Rank</th>
+      </tr>
+    </thead>
+    <% console.log(allRanks); %>
+    <% allRanks.forEach(function(guess) { %>
+      <tbody class="text-right">
+        <tr>
+          <th scope="row"><%- guess.guesserName %></th>
+          <td><b><%- guess.totalRank %></b></td>
+          <td><%- guess.rankPoints %></td>
+          <td><%- guess.birthdateRank %></td>
+          <td><%- guess.lengthRank %></td>
+          <td><%- guess.weightRank %></td>
+          <td><%- guess.sexRank %></td>
+        </tr>
+      </tbody>
+    <% }); %>
+  </table>
+</div>
+
+<%- include("partials/footer") %>
