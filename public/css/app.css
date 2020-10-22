@@ -35,7 +35,7 @@ h3 {
   background-position: center center;
   background-repeat: no-repeat;
   max-width: 100%;
-  padding-top: 98px;
+  margin-top: 98px;
   min-height: 65vh;
 }
 
@@ -129,4 +129,18 @@ nav {
   padding-top: 98px;
   min-height: 65vh;
   margin-bottom: 3rem;
+}
+
+#resultsCol {
+  margin-top: 8rem;
+}
+
+#clickHere {
+  color: rgb(44, 62, 80);
+  background-color: #fff;
+  padding: 15px 30px;
+  opacity: .8;
+  font-weight: 600;
+  margin-top: 2rem;
+  font-size: 2rem;
 }
